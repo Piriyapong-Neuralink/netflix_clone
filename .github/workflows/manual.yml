@@ -14,21 +14,10 @@ jobs:
           echo ${{ secrets.SSH_KEY_FOR_BUILD_IMAGE }} | base64 --decode --ignore-garbage > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
           
-      - name: Check properties
-        run: | 
-          who
-          pwd
-          
-      - name: make new username & password 
-        run: |
-          sudo adduser 'piriyapong'
-          who
-          
-      - name: generate the keys
-        run: |
-          ssh-keygen -t dsa -f KEY_FILE
-          scp KEY_FILE.pub piriyapong@KEY_FILE
-          rm KEY_FILE.pub
+      - name: copy public key from id_rsa.pub
+        run: cat ~/.ssh/id_rsa.pub
+        
+      
    
           
  
