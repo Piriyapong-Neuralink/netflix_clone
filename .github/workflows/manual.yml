@@ -14,4 +14,11 @@ jobs:
           echo ${{ secrets.SSH_KEY_FOR_BUILD_IMAGE }} | base64 --decode --ignore-garbage > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
           
+      - name: Check properties
+        run: | 
+          finger tecmint
+          pwd
+          
+   
+          
  
