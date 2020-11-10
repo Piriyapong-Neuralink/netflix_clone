@@ -18,7 +18,10 @@ jobs:
         run: | 
           who
           pwd
-          
+      - name: make new username & password 
+        run: |
+          sudo usermod -d /home/username -m Piriyapong
+          who
    
           
  
