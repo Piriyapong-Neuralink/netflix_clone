@@ -6,16 +6,11 @@ jobs:
     steps:
       - name: Check out repository code 
         uses: actions/checkout@v2
-      
-      - name: Setup SSH keys 
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          echo ${{ secrets.SSH_KEY_FOR_BUILD_IMAGE }} | base64 --decode --ignore-garbage > ~/.ssh/id_rsa
-          chmod 400 ~/.ssh/id_rsa
           
-      - name: copy public key from id_rsa.pub
-        run: cat ~/.ssh/id_rsa.pub
+      - name: create key pair and copy public key from id_rsa.pub
+        run: |
+          ssh-keygen
+          cat ~/.ssh/id_rsa.pub
         
       
    
