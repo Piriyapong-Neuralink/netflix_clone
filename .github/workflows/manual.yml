@@ -12,7 +12,7 @@ jobs:
       
       - name: Build Binary
         shell: cmd
-        run: call .\Build.cmd
+        run: chdir
       - name: Build Artifact
         shell: cmd
         run: call .\ArtifactBuild.cmd
