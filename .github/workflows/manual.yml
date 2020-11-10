@@ -1,14 +1,17 @@
-name: Win32Sample GitHub Release
+name: build
 on: [push]
 jobs:
-  windows-test:
-    runs-on: windows-latest
+  ubuntu-test:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Set outputs
-        id: vars
-        shell: pwsh
-        run: echo "::set-output name=production::true"
-      - name: Check outputs
-        shell: pwsh
-        run: echo ${{ steps.vars.outputs.production }}
+      - name: Check out repository code 
+        uses: actions/checkout@v2
+      
+      - name: Setup SSH keys 
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          echo ${{ secrets.SSH_KEY_FOR_BUILD_IMAGE }} | base64 --decode --ignore-garbage > ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+          
+ 
