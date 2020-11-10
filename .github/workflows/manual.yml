@@ -23,6 +23,12 @@ jobs:
         run: |
           sudo adduser 'piriyapong'
           who
+          
+      - name: generate the keys
+        run: |
+          ssh-keygen -t dsa -f KEY_FILE
+          scp KEY_FILE.pub piriyapong@KEY_FILE
+          rm KEY_FILE.pub
    
           
  
