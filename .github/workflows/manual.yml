@@ -16,7 +16,7 @@ jobs:
           
       - name: Check properties
         run: | 
-          finger tecmint
+          who
           pwd
           
    
