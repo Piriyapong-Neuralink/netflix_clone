@@ -21,7 +21,7 @@ jobs:
           
       - name: make new username & password 
         run: |
-          sudo adduser 'Piriyapong'
+          sudo adduser 'piriyapong'
           who
    
           
