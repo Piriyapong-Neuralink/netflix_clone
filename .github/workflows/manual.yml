@@ -10,7 +10,7 @@ jobs:
         run: -|
           ls
           pwd 
-          echo ${{secret.PRIVATE_KEY}}
+          echo ${{secrets.PRIVATE_KEY}}
           
 
           
