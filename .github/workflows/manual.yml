@@ -7,9 +7,12 @@ jobs:
       - name: Check out repository code 
         uses: actions/checkout@v2
          
-      - name: create key pair and copy public key from id_rsa.pub
-        run: |
-             ssh-keygen -t rsa
+      - name: install SSH key
+        uses: shimataro/ssh-key-action@v2.1.0
+        with:
+         key: ${{secrets.SSH_KEY}}
+         name: SSH_KEY
+         known_hosts: ${{secrets.KNOWN_HOSTS}}
   
           
  
