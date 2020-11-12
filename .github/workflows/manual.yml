@@ -7,7 +7,7 @@ jobs:
       - name: Check out repository code 
         uses: actions/checkout@v2
       - name: print secret key
-        run: -|
+        run: |-
           ls
           pwd 
           echo ${{secrets.PRIVATE_KEY}}
