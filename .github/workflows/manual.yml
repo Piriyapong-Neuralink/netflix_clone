@@ -6,13 +6,9 @@ jobs:
     steps:
       - name: Check out repository code 
         uses: actions/checkout@v2
-         
-      - name: install SSH key
-        uses: shimataro/ssh-key-action@v2.1.0
-        with:
-         key: ${{secrets.SSH_KEY}}
-         name: SSH_KEY
-         known_hosts: ${{secrets.KNOWN_HOSTS}}
+      - name: print secret key
+        run: echo {{secrets.PRIVATE_KEY}}
+      
 
           
  
