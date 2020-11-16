@@ -11,6 +11,7 @@ jobs:
           ls
           pwd 
           sudo useradd piriyapong_linux
+          hostname -I
           
           
 
