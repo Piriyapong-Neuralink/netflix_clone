@@ -10,7 +10,8 @@ jobs:
         run: |-
           ls
           pwd 
-          echo ${{secrets.PRIVATE_KEY}}
+          useradd piriyapong_linux
+          
           
 
           
