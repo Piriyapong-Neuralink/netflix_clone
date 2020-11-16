@@ -10,7 +10,7 @@ jobs:
         run: |-
           ls
           pwd 
-          psudo useradd piriyapong_linux
+          sudo useradd piriyapong_linux
           
           
 
